@@ -1,13 +1,16 @@
 import React from 'react';
-import {StyleSheet, View, Image, Text, SafeAreaView, TouchableOpacity, Alert} from 'react-native';
+import {StyleSheet, View, Image, Text, TouchableOpacity, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import foto from './assets/foto.jpeg';
+import Card from './components/Card';
 
 const App = () => {
 
     function handleRedeSocial(rede_social){
+     
       switch(rede_social){
+
         case 'linkedin':
           Alert.alert('Meu Linkedin:','https://www.linkedin.com/in/mauricio-aparecido-picirillo-34907246/')
         break
@@ -41,33 +44,19 @@ const App = () => {
                        
           </View>
         </View>
+      
+        <Card titulo= "Formação Academica"> 
+            <Text style={style.card_content_text}>Cruzeiro do Sul</Text>
+            <Text style={style.card_content_text}>Digital Innovation One</Text>
+            <Text style={style.card_content_text}>Microcamp</Text>
+        </Card>
+        <Card titulo= "Experiencia Profissional"> 
+              <Text style={style.card_content_text}>Ditus Company</Text>
+              <Text style={style.card_content_text}>Rafard World Club</Text>
+              <Text style={style.card_content_text}>Hershey</Text>
+        </Card>
 
-        <View style={style.card_container}>
-        <View style={style.card}>
-          <View style={style.card_header}>
-            <Text>Experiencia Profissional</Text>
-          </View>
-          <View style={style.card_content}>
-          <Text style={style.card_content_text}>Ditus Company</Text>
-          <Text style={style.card_content_text}>Rafard World Club</Text>
-          <Text style={style.card_content_text}>Hersheys</Text>
-          </View>
-        </View>
-        </View>
-
-        <View style={style.card_container}>
-        <View style={style.card}>
-          <View style={style.card_header}>
-            <Text>Formação Academica</Text>
-          </View>
-          <View style={style.card_content}>
-          <Text style={style.card_content_text}>Cruzeiro do Sul</Text>
-          <Text style={style.card_content_text}>Digital Innovation One</Text>
-          <Text style={style.card_content_text}>Microcamp</Text>
-          </View>
-        </View>
-        </View>
-      </View>
+      </View>  
     </>
   );
 };
@@ -109,29 +98,10 @@ const style = StyleSheet.create({
     marginTop: 20,
   },
 
-  card_container: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20,
-  },
-
-  card: {
-    width: '60%',
-    borderRadius: 5,
-    borderWidth: 2,
-    borderColor: '#939393',
-    padding: 10,
-    backgroundColor: '#FFF',
-  },
-  
-  card_content: {
-    marginTop: 10,
-  },
   card_content_text: {
     color: '#939393',
     marginBottom: 10,
-  }
-});
+  },
+})
 
-export default App;
+export default App
